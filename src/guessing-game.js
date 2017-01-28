@@ -13,16 +13,16 @@ class GuessingGame {
     }
 
     guess() {
-	return this.Range[this.length>>1];
+	return this.Range[Math.ceil(this.length/2)];
     }
 
     lower() {
-	this.length=this.length>>1;	
+	this.length=Math.ceil(Math.ceil(this.length/2));	
 	return this;
     }
 
     greater() {
-	this.setRange(this.Range[this.length>>1],this.Range[this.length])
+	this.setRange(this.Range[Math.ceil(this.length/2)],this.Range[this.length])
 	return this;
     }
 }
