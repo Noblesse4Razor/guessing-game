@@ -1,29 +1,27 @@
 class GuessingGame {
     constructor() {
-		
-	}
+        this.Maxi = 0;
+        this.Mini = 0;
+        this.Midi = 0;
+    }
 
     setRange(min, max) {
-	this.Range = new Array();
-	for(let i=0;i<=max-min;i++)
-	{
-		this.Range[i]=i+min;
-	}
-	this.length = max - min; // not sure about my right to access default props of the Array class
+        this.Maxi = max;
+        this.Mini = min;
     }
 
     guess() {
-	return this.Range[Math.ceil(this.length/2)];
+        return this.Midi = Math.round((this.Mini + this.Maxi) / 2);
     }
 
     lower() {
-	this.length=Math.ceil(Math.ceil(this.length/2));	
-	return this;
+        this.Maxi = this.Midi;
+        return this;
     }
 
     greater() {
-	this.setRange(this.Range[Math.ceil(this.length/2)],this.Range[this.length])
-	return this;
+        this.Mini = this.Midi;
+        return this;
     }
 }
 
